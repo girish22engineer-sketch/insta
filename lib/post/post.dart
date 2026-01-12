@@ -105,7 +105,7 @@ class Post extends StatelessWidget {
 
               SizedBox(
                  width: size.width*0.1,
-                               height: size.height*0.1,
+                 height: size.height*0.1,
                 child: PopupMenuButton(
                   icon: Icon(Icons.more_vert, color: Colors.white),
                   itemBuilder: (context)=>[
@@ -128,16 +128,18 @@ class Post extends StatelessWidget {
           onTap: () {
             
           },
-          child: SizedBox(
-              width: size.width*1,
-                             height: size.height*0.5,
-           child: Stack(
-            children: [
-              
-                Positioned.fill(
-                  child: Image.network(content,fit: BoxFit.fill,)),
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Stack(
+              children: [
+                
+                  Positioned.fill(
+                  child: Image.network(
+                    content,fit: BoxFit.cover,)
+                    ),
                 Positioned(
-                  right: 30,bottom: 30,
+                  right: 12,
+                  bottom: 12,
                  child: ValueListenableBuilder(
                    valueListenable: isMute,
                    builder: (
