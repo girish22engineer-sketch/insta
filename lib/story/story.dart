@@ -14,7 +14,8 @@ class Story extends StatelessWidget {
     return Container(
     
     
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(300),),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(300),),
     
     
       child: 
@@ -30,7 +31,7 @@ class Story extends StatelessWidget {
                 padding: const EdgeInsets.all(4.0),
                 child: InkWell(onTap: () {
                   
-                },
+                },borderRadius: BorderRadius.circular(300),
                   child: CircleAvatar(
                   radius: 40,
                   foregroundImage: NetworkImage('$image'),

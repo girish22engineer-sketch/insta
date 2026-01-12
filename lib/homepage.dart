@@ -16,26 +16,27 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.black,
-      appBar: AppBar(backgroundColor: Colors.black,
-        title: Text('Instsgram',style: TextStyle(color: Colors.white),),actions: [
-          Row(spacing: 15,
-            children: [
-              InkWell(
-                onTap: () {
-                  Get.to(Notificationpage());
-                },
-                child: Icon(BootstrapIcons.heart,color: Colors.white,)),
-              Padding(
-                padding: const EdgeInsets.only(right: 10.0),
-                child: InkWell(
-                  onTap: () {
-                    Get.to(Messagepage());
-                  },
-                  child: Icon(BootstrapIcons.messenger,color: Colors.white,)),
-              )
-            ], 
-          )
-        ],
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('Instagram',
+                     style: TextStyle( 
+                             color: Colors.white),
+                             ),
+  actions: [
+  IconButton(
+    onPressed: () {
+      Get.to(Notificationpage());
+    },
+    icon: Icon(BootstrapIcons.heart, color: Colors.white),
+  ),
+  IconButton(
+    onPressed: () {
+      Get.to(Messagepage());
+    },
+    icon: Icon(BootstrapIcons.messenger, color: Colors.white),
+  ),
+]
+
       ),
       body:SingleChildScrollView(
         child: Column(
@@ -43,7 +44,7 @@ class Homepage extends StatelessWidget {
           
               
          SizedBox(
-          height: 160,
+          height: 110,
               child: 
         
                   ListView(

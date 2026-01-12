@@ -15,35 +15,46 @@ class Messagepage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column( spacing: 10,
           children: [
-            Row( spacing: 40,
+            Row( 
               children: [
-                IconButton(onPressed: (){
+                IconButton(
+                  onPressed: (){
                   Get.to(Homepage());
-                }, icon: Icon(Icons.arrow_back,color: Colors.white,size: 30,)),
-                Container(
+                },
+                 icon: Icon(Icons.arrow_back,color: Colors.white,size: 30,)),
+                Expanded(
                   child: Row(
                     children: [
-                      Text('user id ',style: TextStyle(color: Colors.white),),
-                      //  IconButton(onPressed: (){}, icon: Icon(Icons.keyboard_arrow_down_rounded,color: Colors.white,)),
-                      PopupMenuButton(icon: Icon(Icons.keyboard_arrow_down_rounded,color: Colors.white),
-                        itemBuilder: (context)=>[
+                      Text('user id ',
+                           style: TextStyle(
+                            color: Colors.white),
+                            ),
+                  
+                      PopupMenuButton(
+                        icon: Icon(
+                          Icons.keyboard_arrow_down_rounded,color: Colors.white),
+                         itemBuilder: (context)=>[
                           PopupMenuItem(child: Text('velga official')),
                             PopupMenuItem(child: Text('velga family'))
-                        ]),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 190.0),
-                        child: IconButton(onPressed: (){}, icon: Icon(Icons.smart_toy_outlined,color: Colors.white,)),
-                      ),IconButton(onPressed: (){}, icon: Icon(Icons.note_alt_outlined,color: Colors.white,))
+                        ]
+                        ),
+                        Spacer(),
+                   IconButton(onPressed: (){}, icon: Icon(Icons.smart_toy_outlined,color: Colors.white,)),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.note_alt_outlined,color: Colors.white,))
                     ],
                     
                   ),
                 )
               ],
             ),
-            SizedBox( height: size.height*0.07,width: size.width*0.7,
-              child: SearchBar(
-                hintText: 'Ask Meta AI or Search',
-                
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: SizedBox( 
+                height: 48,
+                child: SearchBar(
+                  hintText: 'Ask Meta AI or Search',
+                  
+                ),
               ),
             ),
              Padding(
@@ -70,7 +81,8 @@ class Messagepage extends StatelessWidget {
                       ),
              ),
                 Container(
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 4),
