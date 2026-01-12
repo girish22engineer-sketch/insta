@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/accountpage.dart';
 import 'package:flutter_application_1/messagepage.dart';
 import 'package:flutter_application_1/notificationpage.dart';
-
 import 'package:flutter_application_1/story/story.dart';
-
 import 'post/post.dart';
 import 'package:get/get.dart';
 
