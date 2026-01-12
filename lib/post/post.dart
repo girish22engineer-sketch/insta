@@ -14,9 +14,10 @@ class Post extends StatelessWidget {
    required this.accname,
    required this.content
    
-   });
+   }
+   );
     final ValueNotifier<bool> isSave = ValueNotifier<bool>(false);
-     final ValueNotifier<bool> isLiked = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> isLiked = ValueNotifier<bool>(false);
   final ValueNotifier<int> likeCount = ValueNotifier<int>(0); // default
   final ValueNotifier<bool> isFollow =ValueNotifier<bool>(false);
   final ValueNotifier<bool>isMute=ValueNotifier<bool>(false);
@@ -72,7 +73,7 @@ class Post extends StatelessWidget {
                        ),
                     
               SizedBox(
-                width: size.width*0.35,
+                width: size.width*0.4,
                     
                 child:  InkWell(
                     onTap: () {
@@ -81,7 +82,7 @@ class Post extends StatelessWidget {
                     child: Padding(
                       padding:  EdgeInsets.all(
                         size.height*0.02),
-                      child: Text(accname, style: TextStyle(color: Colors.white,fontSize: size.height*0.03),textAlign: TextAlign.center,),
+                      child: Text(accname, style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
                     ),
                     ),
                 ),
@@ -102,25 +103,23 @@ class Post extends StatelessWidget {
                   },
                 ),
               ),
-
-              SizedBox(
-                 width: size.width*0.1,
-                 height: size.height*0.1,
-                child: PopupMenuButton(
+              Spacer(),
+                
+             PopupMenuButton(
                   icon: Icon(Icons.more_vert, color: Colors.white),
                   itemBuilder: (context)=>[
                   PopupMenuItem(child: Text('about'),
-                  ),PopupMenuItem(child: Text('why are you seeing this')
-                  ),PopupMenuItem(child: Text('about instagram add')),
+                  ),
+                  PopupMenuItem(child: Text('why are you seeing this')
+                  ),
+                  PopupMenuItem(child: Text('about instagram add')),
                   PopupMenuItem(child: Text('intersted')),
                   PopupMenuItem(child: Text('Not intersted')),
                   PopupMenuItem(child: Text('Report ad',style: TextStyle(color: Colors.deepOrange),))
                   
-          
-                 
                 ]
                 )
-              )
+              
             ],
           ),
         ),
@@ -161,6 +160,7 @@ class Post extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(spacing: 20,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
                  ValueListenableBuilder<bool>(
                 valueListenable: isLiked,
@@ -170,6 +170,7 @@ class Post extends StatelessWidget {
                     child: Icon(
                       liked ? BootstrapIcons.heart_fill : BootstrapIcons.heart,
                       color: liked ? Colors.red : Colors.white,
+                      size: 24,
                     ),
                   );
                 },
@@ -181,7 +182,11 @@ class Post extends StatelessWidget {
                 builder: (context, count, _) {
                   return Text(
                     '$count',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500
+                      ),
                   );
                 },
               ),
@@ -189,10 +194,16 @@ class Post extends StatelessWidget {
                 onTap: () {
                      Get.to(Commentpage());
                 },
-                child: Icon(Icons.comment,color: Colors.white,)
+                child: Icon(Icons.comment,
+                color: Colors.white,
+                size: 24,
+                )
                 ),
               PopupMenuButton(
-                icon: Icon(Icons.send,color: Colors.white,),
+                icon: Icon(Icons.send,
+                color: Colors.white,
+                size: 24,
+                ),
                 itemBuilder: (context)=>[
                 PopupMenuItem(
                   child:   
@@ -204,7 +215,7 @@ class Post extends StatelessWidget {
              PopupMenuItem(child:   Story(yourstory: 'logu',image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJPpj0S8YQh_2NKpGxMD35na5Ql9Xdeftc1A&s',),)             
               ]
               ),
-                SizedBox(width: size.width*0.4,), 
+               Spacer(),
             
               ValueListenableBuilder(valueListenable: isSave, builder: (context,Save,_)
               {
@@ -212,6 +223,7 @@ class Post extends StatelessWidget {
                   Save?
                   BootstrapIcons.save_fill:BootstrapIcons.save
                   ,color: Colors.white,
+                  size: 24,
                   )
                   );
               }
