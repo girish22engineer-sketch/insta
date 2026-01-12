@@ -49,8 +49,8 @@ class Post extends StatelessWidget {
           padding:  EdgeInsets.all(
             size.width*0.01),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+
+            children: [            
                   SizedBox(
                       width: size.width*0.1,
                       height: size.height*0.1,
@@ -59,10 +59,11 @@ class Post extends StatelessWidget {
                           
                         },
                          child: InkWell(onTap: () {
-                           Get.to(Accountpage());
+                           Get.to(Accountpage()
+                           );
                          },
                            child: CircleAvatar(
-                              radius: size.height*0.05,
+                              radius: 20,
                              child: Image.network(profile,),
                 ),
                                   
@@ -71,8 +72,8 @@ class Post extends StatelessWidget {
                        ),
                     
               SizedBox(
-                width: size.width*0.4,
-                      height: size.height*0.1,
+                width: size.width*0.35,
+                    
                 child:  InkWell(
                     onTap: () {
                       Get.to(Accountpage());
@@ -86,8 +87,7 @@ class Post extends StatelessWidget {
                 ),
               
               SizedBox(
-                height: size.height*0.06,
-                width: size.width*0.26,
+                height: 36,
                 child: ValueListenableBuilder(
                   valueListenable: isFollow,
                   builder: (context, following, _) {
@@ -146,7 +146,9 @@ class Post extends StatelessWidget {
                     BuildContext context, Muted, _) {
                      return  InkWell(
                       onTap: toggleMute,
-                      child: Icon(Muted?Icons.volume_off_outlined:Icons.volume_down, color: Colors.white,),
+                      child:Icon(Muted
+                                    ?Icons.volume_off_outlined
+                                    :Icons.volume_up)
                      );
                    },
                  ),
