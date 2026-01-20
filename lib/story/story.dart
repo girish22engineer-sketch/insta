@@ -1,47 +1,51 @@
-
 import 'package:flutter/material.dart';
+
 class Story extends StatelessWidget {
   final String yourstory;
   final String image;
-  const Story({super.key,
-  required this.yourstory,
-  required this.image
+
+  const Story({
+    super.key,
+    required this.yourstory,
+    required this.image,
   });
 
   @override
   Widget build(BuildContext context) {
-    var size =MediaQuery.of(context).size;
-    return Container(
-    
-    
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(300),),
-    
-    
-      child: 
-      Column(
+    final size = MediaQuery.of(context).size;
+
+    final double avatarRadius = size.width * 0.09; // responsive
+    final double storyWidth = size.width * 0.22;
+
+    return SizedBox(
+      width: storyWidth,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           Container(
-            
-            
-              decoration: BoxDecoration(
-                shape:BoxShape.circle,
-                border: Border.all(width: 2,color: Colors.orange)),
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: InkWell(onTap: () {
-                  
-                },borderRadius: BorderRadius.circular(300),
-                  child: CircleAvatar(
-                  radius: 40,
-                  foregroundImage: NetworkImage('$image'),
-                  ),
-                ),
-              ),
+
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(width: 2, color: Colors.orange),
             ),
-          
-          // ignore: unnecessary_string_interpolations
-          Text('$yourstory',style: TextStyle(color: Colors.white,fontSize: size.height*0.02),)
+            padding: const EdgeInsets.all(4),
+            child: CircleAvatar(
+              radius: avatarRadius,
+              backgroundImage: NetworkImage(image),
+            ),
+          ),
+
+          const SizedBox(height: 6),
+
+          Text(
+            yourstory,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: size.width * 0.035, // responsive text
+            ),
+          ),
         ],
       ),
     );

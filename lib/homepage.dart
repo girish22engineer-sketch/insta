@@ -13,36 +13,17 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text('Instagram',
-                     style: TextStyle( 
-                             color: Colors.white),
-                             ),
-  actions: [
-  IconButton(
-    onPressed: () {
-      Get.to(Notificationpage());
-    },
-    icon: Icon(BootstrapIcons.heart, color: Colors.white),
-  ),
-  IconButton(
-    onPressed: () {
-      Get.to(Messagepage());
-    },
-    icon: Icon(BootstrapIcons.messenger, color: Colors.white),
-  ),
-]
-
-      ),
-      body:SingleChildScrollView(
-        child: Column(
+    var size = MediaQuery.of(context).size;
+    return Material(
+      color: Colors.black,
+      child: 
+      ListView(
+      
           children: [
           
               
          SizedBox(
-          height: 110,
+          height: size.height*0.32,
               child: 
         
                   ListView(
@@ -74,37 +55,8 @@ class Homepage extends StatelessWidget {
         
      
             ],
-        ),
-      ),bottomNavigationBar:  BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-
-          backgroundColor: Colors.black,
-         unselectedItemColor: Colors.white,
-         selectedItemColor: Colors.white,
-          items: 
-         [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: '',
-          
-          ), BottomNavigationBarItem(icon: Icon(Icons.search),label: ''
-          
-          ), BottomNavigationBarItem(icon: Icon(Icons.add_box_outlined),label: ''
-          
-          ), BottomNavigationBarItem(icon: Icon(Icons.video_library_outlined),label: ''
-          
-          ),  BottomNavigationBarItem(icon: Icon(Icons.person),label: '',
-          
-          ),
-         ],onTap: (index){
-          switch(index){
-            case 0:Get.to(Homepage());
-            
-          }
-          switch(index){
-            case 4:Get.to(Accountpage());
-          }
-         },
-       
-         ),
+        
+      ),
     );
   }
 }
