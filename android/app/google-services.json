@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874329281248",
+    "project_id": "taskfireinsta",
+    "storage_bucket": "taskfireinsta.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874329281248:android:c6b03ad1c211168dc77685",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALhnwufkxociXClziKl_1syJqHjzobAPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
