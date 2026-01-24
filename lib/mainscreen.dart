@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/navbar.dart';
 import 'package:get/get.dart';
 
 import 'accountpage.dart';
-import 'addpost.dart';
+import 'add_post.dart';
 import 'homepage.dart';
 import 'messagepage.dart';
+
 import 'notificationpage.dart';
-import 'reels.dart';
+import 'reelspage.dart';
 import 'searchpage.dart';
+
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -19,12 +21,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    Homepage(),
-    Searchpage(),
-    Addpost(),
-    Reels(),
-    Accountpage(),
+  final List<Widget> _pages = <Widget>[
+     Homepage(),
+     Searchpage(),
+     AddPost(),
+     Reels(),
+     Accountpage(),
   ];
 
   @override
@@ -32,7 +34,6 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
 
-      // ✅ SAME APPBAR FOR ALL PAGES
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
@@ -41,15 +42,11 @@ class _MainScreenState extends State<MainScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              Get.to(Notificationpage());
-            },
+            onPressed: () => Get.to(const Notificationpage()),
             icon: const Icon(Icons.favorite_border, color: Colors.white),
           ),
           IconButton(
-            onPressed: () {
-              Get.to(Messagepage());
-            },
+            onPressed: () => Get.to(const Messagepage()),
             icon: const Icon(Icons.messenger_outline, color: Colors.white),
           ),
         ],
@@ -59,17 +56,24 @@ class _MainScreenState extends State<MainScreen> {
         index: _currentIndex,
         children: _pages,
       ),
-      bottomNavigationBar: Navbar(
 
-          onTap: (index) {
+      bottomNavigationBar: NavigationBar(
+        
+        backgroundColor: Colors.black,
+        selectedIndex: _currentIndex,
+        onDestinationSelected: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.home,), label: "home",),
+          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
+          NavigationDestination(icon: Icon(Icons.add_box), label: 'Add'),
+          NavigationDestination(icon: Icon(Icons.play_arrow), label: 'Reels'),
+          NavigationDestination(icon: Icon(Icons.person), label: 'Account'),
+        ],
       ),
-
-     
     );
   }
 }
