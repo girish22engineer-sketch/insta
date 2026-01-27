@@ -19,41 +19,46 @@ class Homepage extends StatelessWidget {
                 Story(
                   yourstory: 'dhanush',
                   image:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb0159GaEnv-VkyrDiWafsyyAjzWu9ThZQIQ&s',
+                      'assets/images/1.jpg',
                 ),
                 Story(
                   yourstory: 'siva',
                   image:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSumxRUib40d9nGJinvbap8wganMWrmA_SOQQ&s',
+                      'assets/images/2.jpg',
                 ),
                 Story(
                   yourstory: 'logu',
                   image:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJPpj0S8YQh_2NKpGxMD35na5Ql9Xdeftc1A&s',
+                      'assets/images/3.jpg',
                 ),
                 Story(
                   yourstory: 'velga',
                   image:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHXB-nP3eWXxawpGJNltcuwjuCK6vzHxnzbQ&s',
+                      'assets/images/4.png',
                 ),
+                Story(
+                  yourstory: 'surya',
+                  image:
+                      'assets/images/5.jpg',
+                ),Story(yourstory: 'pk', image: 'assets/images/6.jpg',),
               ],
             ),
           ),
 
            Post(
             profile:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH274VBO8xBkASXrcRJohAF75nFdh-Vwm9ig&s',
+                'assets/images/5.jpg',
             accname: 'Velga',
             content:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgJhng02dkXeDzkxso3IeY1xvtzaF_YAMFcw&s',
+                'assets/images/6.jpg',
           ),
 
            Post(
             profile:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb0159GaEnv-VkyrDiWafsyyAjzWu9ThZQIQ&s',
+                'assets/images/5.jpg',
             accname: 'Surya Engineering',
             content:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_xcEUfsnaChTZxK8iXwicv0ucQ_g8Xfew2Q&s',
+                'assets/images/7.png',
           ),
         ],
       ),

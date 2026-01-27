@@ -17,6 +17,7 @@ class Accountpage extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         child: Container(
+          height: size.height,
           color: Colors.black,
           padding: EdgeInsets.all(size.width*0.04),
           child: Column(
